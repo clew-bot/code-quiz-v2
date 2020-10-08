@@ -18,7 +18,7 @@ var shuffledQuestions, currentQuestion;
 var myQuestions = [
     //Array index 0 
     {
-    questions: "What programming language builds on top of Javascript adding tools static type definitions?",
+    questions: "What programming language builds on top of Javascript adding tools like static type definitions?",
     answers: [
         {text: "ActionScript", correct: false},
         {text: "TypeScript", correct: true},
@@ -143,7 +143,7 @@ function gameTimer() {
     questionTimer = setInterval(() => {
         secondsLeft--;
     //set the timer display to the string and how many seconds left. //
-        timer.textContent = `You currently have ${secondsLeft} seconds left in the Quiz. Good Luck.`
+        timer.textContent = `You currently have ${secondsLeft} seconds left in the quiz. Good Luck.`
         if(secondsLeft <= 1) {
         
         //Clear the timer once we hit below 1. //
@@ -230,19 +230,33 @@ function selectAnswer(click) {
      btnContainer.setAttribute("style", "display:none;");
      var inInitials = document.createElement('input');
      console.log(inInitials + "initials")
-     var highBody = document.getElementsByTagName('BODY')[0].appendChild(inInitials);
-     
+     var highBody = document.getElementsByTagName('BODY')[0].appendChild(inInitials).placeholder = `Enter your name!`;
+     var sbmtBtn = document.createElement('button');
      
      if (highBody.firstChild) {
          highBody.removeChild;
      }
-     localStorage.setItem("score", score);
-     getScore();
- }
-
- function getScore() {
-    var x = localStorage.getItem("score", score)
-    document.getElementById('highScore').textContent = `Your score is ${x}, nice!`;
+     document.getElementById('highScore').textContent = `Your score is ${score}, nice!`;
+    var sbmtBtn = document.createElement('button');
+    sbmtBtn.classList.add('submit-hs-btn');
+    sbmtBtn.innerHTML = `Submit`;
+    document.getElementsByTagName('BODY')[0].appendChild(sbmtBtn);
+     var x = localStorage.setItem("score", score);
+     var y = localStorage.setItem("initials", inInitials.value)
+     sbmtBtn.addEventListener("click", saveHighscore);
     
+ 
+
+
+ 
+ function saveHighscore(event) {
+    event.preventDefault();
+     console.log("testing saving score button");
+     localStorage.setItem("score", score);
+     localStorage.setItem("initials", inInitials.value);
+     document.getElementById('userInitial').textContent = localStorage.getItem("initials");
+     document.getElementById('userScore').textContent = localStorage.getItem("score");
+         
  }
+}
 

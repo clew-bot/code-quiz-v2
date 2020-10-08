@@ -1,3 +1,17 @@
+body {
+    background: linear-gradient(90deg, rgba(133,188,217,1) 0%, rgba(98,98,224,1) 47%, rgba(0,255,149,1) 100%);
+}
+
 h1 {
     color: dodgerblue;
+    text-align: center;
+}
+
+.btn {
+    color: red;
+    margin: 10px 10px 10px 10px;
+}
+
+.sbmt-hs-btn {
+    color: blue;
 }
