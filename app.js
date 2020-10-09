@@ -9,7 +9,10 @@ var startingButton = document.getElementById('startBtn');
 var scoreBoard = document.getElementById('score');
 var displayQuestion = document.getElementById('actualQuestion');
 var nextButton = document.getElementById('nextButton');
-
+var userInitial = document.getElementById('userInitial');
+var userScore = document.getElementById('userScore')
+var userTag = document.getElementById('nameTag');
+var scoreTag = document.getElementById('scoreTag');
 var score;
 var secondsLeft = 60;
 var QuestionTimer;
@@ -115,6 +118,8 @@ var myQuestions = [
 //Mainly code will consist of a function on an AddEventlistener, once that is called, we will be calling more functions //
 // hideBtn = document.getElementById("questionContainer").setAttribute("style", "display:none;")
 btnContainer.setAttribute("style","display:none;");
+userTag.setAttribute("style", "display:none;");
+scoreTag.setAttribute("style", "display:none;");
 startingButton.addEventListener("click", startGame)
 btnContainer.addEventListener("click", () => {
     console.log(currentQuestion);
@@ -125,6 +130,7 @@ function startGame() {
     
     console.log(score);
     var heading = document.getElementById('h2El');
+    
     heading.setAttribute("style", "display:none;")  //Hide the start button since we don't need it using setAttribute //
     startingButton.setAttribute("style", "display:none;")
     btnContainer.setAttribute("style","display:block;");
@@ -222,10 +228,12 @@ function selectAnswer(click) {
 }
 
  function highScore() {
+    userTag.setAttribute("style", "display:block;");
+    scoreTag.setAttribute("style", "display:block;");
      console.log("testing highscorefunction");
      clearInterval(questionTimer);
      timer.setAttribute("style", "display:none;");
-   
+    
      displayQuestion.setAttribute("style", "display:none;");
      btnContainer.setAttribute("style", "display:none;");
      var inInitials = document.createElement('input');
@@ -236,7 +244,15 @@ function selectAnswer(click) {
      if (highBody.firstChild) {
          highBody.removeChild;
      }
-     document.getElementById('highScore').textContent = `Your score is ${score}, nice!`;
+     if (score === 8) {
+        document.getElementById('highScore').textContent = `You got ${score/8*100}%. Wow! A perfect score! Nice!`;
+     }
+     else if (score > 5) {
+        document.getElementById('highScore').textContent = `You got ${score/8*100}%. More than half of em' right! Great job!`; 
+     }
+      else if (score < 5) {
+     document.getElementById('highScore').textContent = `You got ${score/8*100}%. Less than half right... I'd suggest retrying.`;
+     } 
     var sbmtBtn = document.createElement('button');
     sbmtBtn.classList.add('submit-hs-btn');
     sbmtBtn.innerHTML = `Submit`;
@@ -251,12 +267,17 @@ function selectAnswer(click) {
  
  function saveHighscore(event) {
     event.preventDefault();
+    sbmtBtn.setAttribute("style", "display:none;");
+    inInitials.setAttribute("style", "display:none;");
      console.log("testing saving score button");
      localStorage.setItem("score", score);
      localStorage.setItem("initials", inInitials.value);
-     document.getElementById('userInitial').textContent = localStorage.getItem("initials");
-     document.getElementById('userScore').textContent = localStorage.getItem("score");
-         
+     userInitial.textContent = localStorage.getItem("initials");
+     userScore.textContent = localStorage.getItem("score");
+
+
+    ;
  }
 }
+
 

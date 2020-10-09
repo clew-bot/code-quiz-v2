@@ -1,9 +1,14 @@
+:root {
+    font-family: 'Acme', sans-serif;
+}
+
 body {
+    
     background: linear-gradient(90deg, rgba(133,188,217,1) 0%, rgba(98,98,224,1) 47%, rgba(0,255,149,1) 100%);
 }
 
 h1 {
-    color: dodgerblue;
+    color: black;
     text-align: center;
 }
 
