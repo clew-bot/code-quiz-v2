@@ -13,6 +13,8 @@ var userInitial = document.getElementById('userInitial');
 var userScore = document.getElementById('userScore')
 var userTag = document.getElementById('nameTag');
 var scoreTag = document.getElementById('scoreTag');
+var timerAndScore = document.getElementById('timerAndScore');
+var introContainer = document.getElementById('intro-container');
 var score;
 var secondsLeft = 60;
 var QuestionTimer;
@@ -120,6 +122,8 @@ var myQuestions = [
 btnContainer.setAttribute("style","display:none;");
 userTag.setAttribute("style", "display:none;");
 scoreTag.setAttribute("style", "display:none;");
+timerAndScore.setAttribute("style", "display:none;");
+
 startingButton.addEventListener("click", startGame)
 btnContainer.addEventListener("click", () => {
     console.log(currentQuestion);
@@ -127,10 +131,10 @@ btnContainer.addEventListener("click", () => {
 
     scoreBoard.textContent = score;
 function startGame() {
-    
+    introContainer.setAttribute("style", "display:none;");
     console.log(score);
     var heading = document.getElementById('h2El');
-    
+    timerAndScore.setAttribute("style", "display:block;");
     heading.setAttribute("style", "display:none;")  //Hide the start button since we don't need it using setAttribute //
     startingButton.setAttribute("style", "display:none;")
     btnContainer.setAttribute("style","display:block;");

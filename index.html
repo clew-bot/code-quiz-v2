@@ -6,13 +6,26 @@
     <title>Let's take a Quiz</title>
     <link rel="stylesheet" href="./styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
+   
+
 </head>
 <body>
-    <h1 id="h2El">Let's take a timed quiz!</h1>
+    <h1 id="h2El"><img id="cube" src="/assets/cube.png">Ready for a quiz?<img id="cube" src="/assets/cube.png"></h1>
+    <div id="intro-container">
+        <h3 id='intro'>Instructions:</h3>
+        <h6 id='instructions'>There are a total of eight questions. For each question you get right your score will increase by one. If you answer a question wrong you will lose
+            five seconds and not get a point. If the timer ends while you are mid-game your score will be saved and the game will be over. At the end of the game please enter your name or initials and click submit. Your score will be saved to local storage. 
+            Enjoy!
+        </h6>
+    </div>
+    <div id="timerAndScore">
     <div>Timer: <span id="timer">0</span></div>
 
     <div>Score: <span id="score">0</span></div>
+</div>
+<div id="startingButtonContainer">
     <button id="startBtn">Click to start!</button>
+</div>
     <h2 id="highScore"></h2>
     <div id="questionContainer">
         <div id="actualQuestion"></div>
