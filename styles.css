@@ -4,8 +4,8 @@
 
 body {
     
-    background: linear-gradient(90deg, rgba(133,188,217,1) 0%, rgba(98,98,224,1) 47%, rgba(0,255,149,1) 100%);
-}
+    background: rgb(228,231,232);
+    background: linear-gradient(90deg, rgba(228,231,232,1) 10%, rgba(237,240,171,1) 100%);}
 
 h1 {
     color: black;
@@ -30,6 +30,7 @@ h1 {
 	text-decoration:none;
     text-shadow:0px 1px 0px #ded17c;
     width: 42vmax;
+    text-align: center;
 }
 .btn:hover {
 	background:linear-gradient(to bottom, #f2ab1e 5%, #f0c911 100%);
@@ -47,19 +48,33 @@ border-style: solid;
 #instructions {
     margin-left: 10vmin;
     margin-right: 10vmin;
-    -webkit-animation: fadein 5s;
+    /* -webkit-animation: fadein 5s; */
     text-align: center;
+    font-size: 2em;
 }
 
-@keyframes fadein {
-    from { opacity: 0;}
+/* @keyframes fadein {
+    from { opacity: 0;}   didn't look good the second time around
     to { opacity: 1}
-}
+} */
 #cube {
-    max-width: 30px;
+    max-width: 60px;
 }
 
 #startingButtonContainer {
 text-align: center;
     
+}
+#actualQuestion {
+    margin-top: 20vmin;
+    text-align: center;
+    font-size: 5vmin;
+}
+#buttonContainer {
+    text-align: center;
+    margin-top: 5vmin;
+}
+
+#nameAndScore {
+    font-size: 3vmin;
 }

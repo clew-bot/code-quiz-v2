@@ -232,6 +232,7 @@ function selectAnswer(click) {
 }
 
  function highScore() {
+    timerAndScore.setAttribute("style", "display:none;");
     userTag.setAttribute("style", "display:block;");
     scoreTag.setAttribute("style", "display:block;");
      console.log("testing highscorefunction");
