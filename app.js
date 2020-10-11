@@ -252,6 +252,9 @@ function selectAnswer(click) {
      if (score === 8) {
         document.getElementById('highScore').textContent = `You got ${score/8*100}%. Wow! A perfect score! Nice!`;
      }
+     else if (score === 5) {
+        document.getElementById('highScore').textContent = `You got ${score/8*100}%. Keep trying! Great job!`;
+     }
      else if (score > 5) {
         document.getElementById('highScore').textContent = `You got ${score/8*100}%. More than half of em' right! Great job!`; 
      }
